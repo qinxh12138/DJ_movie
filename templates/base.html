@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- 母版-->
+<html lang="en">
+<head>
+    <base href="http://112.74.32.121:8000/">
+    <title>movies</title>
+    <meta name="pragma" content="no-cache">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="0">
+    <meta name="keywords" content="为梦而追,最新电影,最新电视剧，无广告看电视">
+    <meta name="description"
+          content="最新免费电影,最新电视剧，最新动漫，无广告在线影片，提供最新最快最全的电影资讯,提供迅雷看看西瓜电影点播、迅雷电影下载,同时提供各大视频网站视频无广告在线云点播!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="all">
+    <meta name="windows-Target" content="_top">
+    <meta name="author" content="chl14@163.com">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static/img/pub/lovsvol_64.ico">
+    <link rel="stylesheet" href="public/static/css/base.css?v=1542625014750"/>
+    <link rel="stylesheet" href="plugins/topNav/css/head.css?v=1542625014750"/>
+    <!--BootStrap 框架-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap.css?v=1542625014750">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-grid.css?v=1542625014750">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-reboot.css?v=1542625014750">
+    <link href="plugins/paihang/css/lanrenzhijia.css" type="text/css" rel="stylesheet"/>
+    <link href="public/static/css/index/index.css?v=" type="text/css" rel="stylesheet"/>
+
+
+</head>
+<body>
+<div style="width: 100%;height: auto;overflow:hidden;    margin-bottom: 10px;">
+
+    <!-- 头部begin -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/">欢迎来到为梦而追最新影片资源</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav navbar-right">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" onclick="alert('请点击Ctrl+D收藏')" href="http://127.0.0.1:8000/">收藏网站</a>
+                </li>
+
+
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#myModal"
+                           href="http://127.0.0.1:8000/account/login/">{{ request.user.username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="globalLoginBtn_register_input"
+                           href="http://127.0.0.1:8000/account/logout/">登出</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#myModal"
+                           href="http://127.0.0.1:8000/account/login/">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="globalLoginBtn_register_input"
+                           href="http://127.0.0.1:8000/account/register/">注册</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">|</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="xl/1.html?cataLog_id=2f8382c4b6e863668d62bda4f0518c7f">短视频</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="xl/1.html?cataLog_id=402881e8651518890165152b846f0001">你猜</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="xl/1.html?cataLog_id=f39c979857a4874a0157a4a6a4fe0000">电影</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="xl/1.html?cataLog_id=f39c979857a4c8c50157a8ea80700018">电视剧</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="xl/1.html?cataLog_id=f39c979857a4c8c50157a8eaaee30019">动漫</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">登录</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    {% block page_head %}
+
+    {% endblock %}
+
+    {% block page_main %}
+
+    {% endblock %}
+</div>
+<div class="container" style="margin-top: 0">
+    <div id="footer"><p>免责声明:如果侵犯了你的权益，请发邮件至：chl14@163.com，我们会及时删除侵权内容，谢谢合作！</p>
+        <p>Copyright © 2018 蜀ICP备16028726号 2018 All Rights Reserved.
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1272902876'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272902876%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>
